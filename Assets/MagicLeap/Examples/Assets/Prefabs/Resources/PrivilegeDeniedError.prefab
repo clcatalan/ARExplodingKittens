@@ -44,7 +44,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004706979432238}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!114 &114741074782802692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +163,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 2
-  m_PresetInfoIsWorld: 0
 --- !u!114 &114400337546758250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +187,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182731537899498}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!114 &114324420899392928
 MonoBehaviour:
   m_ObjectHideFlags: 0

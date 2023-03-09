@@ -263,7 +263,8 @@ MonoBehaviour:
         Second: 0
     offsetPosition: {x: 0, y: 0, z: 0}
     offsetOrientation: {x: 0, y: 0, z: 0, w: 0}
-  _destroyedContentEffect: {fileID: 1014929301798422, guid: c2be29d1fdb54da48824088fe1dde67d, type: 3}
+  _destroyedContentEffect: {fileID: 1014929301798422, guid: c2be29d1fdb54da48824088fe1dde67d,
+    type: 3}
   _nameText: {fileID: 102739935141739932}
   _highlightEffect: {fileID: 1045491767576344}
   _lineToPCF: {fileID: 120690331432337268}

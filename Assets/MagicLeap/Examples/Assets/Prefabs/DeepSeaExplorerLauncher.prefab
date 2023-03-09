@@ -45,5 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _imageTracker: {fileID: 0}
   _positionOffset: {x: 0, y: 0.06, z: 0}
-  _explorerPrefab: {fileID: 1217135421300786, guid: f1e854ec1a6715e4086f0efb1215f9f0, type: 3}
+  _explorerPrefab: {fileID: 1217135421300786, guid: f1e854ec1a6715e4086f0efb1215f9f0,
+    type: 3}
   _numExplorers: 3

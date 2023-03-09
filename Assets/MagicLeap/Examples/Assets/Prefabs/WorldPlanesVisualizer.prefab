@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _planesBehavior: {fileID: 0}
-  planeVisualPrefab: {fileID: 1572420545925630, guid: d0351538d524663448f7c5b7db4a371b, type: 3}
+  planeVisualPrefab: {fileID: 1572420545925630, guid: d0351538d524663448f7c5b7db4a371b,
+    type: 3}
   wallMaterial: {fileID: 2100000, guid: a9beea521267ba94a9017846aab52d89, type: 2}
   floorMaterial: {fileID: 2100000, guid: 4f8b1fc68e26095488db3aa3e61e9a87, type: 2}
   ceilingMaterial: {fileID: 2100000, guid: d05a06163b51ba34bb7211433cdcf454, type: 2}

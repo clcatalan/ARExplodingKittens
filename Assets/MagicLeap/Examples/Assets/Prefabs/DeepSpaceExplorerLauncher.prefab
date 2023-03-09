@@ -45,8 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _imageTracker: {fileID: 0}
   _positionOffset: {x: 0, y: 0.1, z: 0}
-  _planetPrefabAnimator: {fileID: 95999366534888294, guid: 73bf8012fc57b72478571e19ed503ed4, type: 3}
-  _explorerPrefab: {fileID: 1217135421300786, guid: 787df8bd9996bf04c9fbbaa5776694ee, type: 3}
+  _planetPrefabAnimator: {fileID: 95999366534888294, guid: 73bf8012fc57b72478571e19ed503ed4,
+    type: 3}
+  _explorerPrefab: {fileID: 1217135421300786, guid: 787df8bd9996bf04c9fbbaa5776694ee,
+    type: 3}
   _timeInterval: 0.8
   _minOrbitRadius: 0.08
   _maxOrbitRadius: 0.12

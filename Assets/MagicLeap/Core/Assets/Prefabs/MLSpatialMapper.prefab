@@ -144,7 +144,7 @@ MonoBehaviour:
   m_ComputeNormals: 1
   m_Density: 1
   m_MeshParent: {fileID: 0}
-  m_RequestedMeshType: 0
+  m_MeshType: 0
   m_FillHoleLength: 1
   m_Planarize: 0
   m_DisconnectedComponentArea: 0.25

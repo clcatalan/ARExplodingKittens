@@ -285,7 +285,8 @@ MonoBehaviour:
   _url: https://ia800105.us.archive.org/19/items/jsc2018m000350_When_Cool_Science_Gets_Positively_COLD/jsc2018m000350_When_Cool_Science_Gets_Positively_COLD_MP4.mp4
   _licenseUrl: 
   _stereoMode: 0
-  _videoRenderMaterial: {fileID: 2100000, guid: dcceef03bb9839949ac4ef568106f685, type: 2}
+  _videoRenderMaterial: {fileID: 2100000, guid: dcceef03bb9839949ac4ef568106f685,
+    type: 2}
   _customLicenseHeaderData: []
   _statusText: {fileID: 102014160840062266}
   _spinner: {fileID: 0}

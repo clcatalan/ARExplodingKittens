@@ -267,7 +267,8 @@ MonoBehaviour:
   _contactsVisualizer: {fileID: 8958096533629514023}
   _addContactButton: {fileID: 8958096534036932848}
   _searchTextField: {fileID: 8958096532961506939}
-  _contactItem: {fileID: 753758420150977850, guid: e1327dd5fc6f2d247879fc3afeb5590b, type: 3}
+  _contactItem: {fileID: 753758420150977850, guid: e1327dd5fc6f2d247879fc3afeb5590b,
+    type: 3}
   _deleteNonExistentContactButton: {fileID: 8958096532333544548}
 --- !u!1 &8958096532537213250
 GameObject:
@@ -764,7 +765,8 @@ MonoBehaviour:
   _nameField: {fileID: 8958096534047371144}
   _addPhoneButton: {fileID: 8958096533623593537}
   _addEmailButton: {fileID: 8958096533901177216}
-  _attributeItem: {fileID: 7594423118385902800, guid: 20392f119d8362b4994787ab0e374489, type: 3}
+  _attributeItem: {fileID: 7594423118385902800, guid: 20392f119d8362b4994787ab0e374489,
+    type: 3}
 --- !u!1 &8958096532861703018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,7 +1988,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 2
-  m_PresetInfoIsWorld: 0
 --- !u!114 &8958096533629514024
 MonoBehaviour:
   m_ObjectHideFlags: 0
