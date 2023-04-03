@@ -12,11 +12,11 @@ public class DefuseUIManager : MonoBehaviour
     public static string statusText = "";
     // Start is called before the first frame update
     private void Update() {
-        if (DefuseMinigameManager.gameOver && DefuseMinigameManager.playerWon) {
-            gameStatusText.text = "KITTEN DEFUSED!";
-        } else if (DefuseMinigameManager.gameOver && !DefuseMinigameManager.playerWon) {
-            gameStatusText.text = "KITTEN EXPLODED!";
-        }
+        // if (DefuseMinigameManager.gameOver && DefuseMinigameManager.playerWon) {
+        //     statusText = "KITTEN DEFUSED!";
+        // } else if (DefuseMinigameManager.gameOver && !DefuseMinigameManager.playerWon) {
+        //     statusText = "KITTEN EXPLODED!";
+        // }
 
         gameStatusText.text = statusText;
 

@@ -7,15 +7,37 @@ public class DrawLine : MonoBehaviour
  {
      Coroutine drawing;
      [SerializeField] GameObject canvas;
+     [SerializeField] GameObject rectangle;
+
+     private GameObject startCheckPoint;
+     private GameObject endCheckPoint;
+     public static bool isDrawing {get; private set;}
+    private void Awake() {
+        isDrawing = false;
+
+        startCheckPoint = GameObject.Find("Canvas/EndPoints/Start Checkpoint");
+        endCheckPoint = GameObject.Find("Canvas/EndPoints/End Checkpoint");
+    }
+     
      public void Update()
      {
-        if (DynamicBeam.CheckTrigger() == true) {
-            DynamicBeam.beamLine.startColor = Color.green;
-            StartLine();
+        if (DynamicBeam.CheckTrigger() == true && 
+            DynamicBeam.intersectedObject == startCheckPoint) {
+
+            DynamicBeam.UpdateLineColor(Color.red);
+
+            if (isDrawing == false) {
+                StartLine();
+                DefuseMinigameManager.lineStarted = true;
+                isDrawing = true;
+            }
         }
 
-        if (!DynamicBeam.CheckTrigger()) {
-            FinishLine();
+        if (DynamicBeam.CheckTrigger() == false) {
+            if (isDrawing == true) {
+                FinishLine();
+                isDrawing = false;
+            }
         }
 
      }
@@ -34,10 +56,10 @@ public class DrawLine : MonoBehaviour
         if (drawing != null)
             StopCoroutine(drawing);
 
-        if (!DefuseMinigameManager.endPointConnected) {
-            DestroyExistingLine();
-            DefuseMinigameManager.resetGameStatuses();
-        }
+        // if (!DefuseMinigameManager.endPointConnected) {
+        //     DestroyExistingLine();
+        //     DefuseMinigameManager.resetGameStatuses();
+        // }
      }
 
      public static void DestroyExistingLine() {
@@ -61,15 +83,19 @@ public class DrawLine : MonoBehaviour
 
         while (true) {
             Vector3 controllerPos = DynamicBeam.beamLine.GetPosition(1);
-            controllerPos.z = canvas.transform.position.z;
-            Vector3 position = Camera.main.ScreenToWorldPoint(controllerPos);
-            DefuseUIManager.statusText = position.ToString();
+            // controllerPos.z = canvas.transform.position.z - 1;
+            controllerPos.z = rectangle.transform.position.z;
+            // Vector3 mousepos = Input.mousePosition;
+            // mousepos.z = canvas.transform.position.z;
+            // Vector3 position = Camera.main.ScreenToWorldPoint(controllerPos);
+            // DefuseUIManager.statusText = controllerPos.ToString();
             try {
                 line.positionCount++;
             } catch (MissingReferenceException) {
                 break;
             }
-            line.SetPosition(line.positionCount - 1, position);
+            line.SetPosition(line.positionCount - 1, controllerPos);
+            string textS = $"{line.GetPosition(line.positionCount - 1).ToString()} {line.GetPosition(0).ToString()}";
             // GenerateMeshCollider(newGameObject, line, collider);
             yield return null;
         }

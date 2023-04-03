@@ -8,6 +8,13 @@ public class PointColliderManager : MonoBehaviour
     [SerializeField] private GameObject startPoint;
     [SerializeField] private GameObject endPoint;
 
+    private void Update() {
+        if (DynamicBeam.intersectedObject == endPoint && DefuseMinigameManager.lineStarted == true) {
+            DefuseMinigameManager.endPointConnected = true;
+            DefuseMinigameManager.ChangeGameState();
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D other) {
         if (DynamicBeam.CheckTrigger() == true) {
             DefuseMinigameManager.lineStarted = true;

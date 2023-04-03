@@ -6,17 +6,18 @@ using UnityEngine.XR.MagicLeap;
 public class DynamicBeam : MonoBehaviour
 {
     public static MLInput.Controller controller;
-    public static LineRenderer beamLine;
+    public static LineRenderer beamLine; 
     public Color startColor;
     public Color endColor;
+
+    public static GameObject intersectedObject;
     // Start is called before the first frame update
 
     void Start()
     {
         controller = MLInput.GetController(MLInput.Hand.Left);
         beamLine = GetComponent<LineRenderer>();
-        beamLine.startColor = startColor;
-        beamLine.endColor = endColor;
+        UpdateLineColor(Color.blue);
     }
 
 
@@ -37,13 +38,17 @@ public class DynamicBeam : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
+            DefuseUIManager.statusText = hit.transform.gameObject.name;
+            intersectedObject = hit.transform.gameObject;
             beamLine.useWorldSpace = true;
             beamLine.SetPosition(0, transform.position);
-            beamLine.SetPosition(1, hit.point);
+            beamLine.SetPosition(1, transform.forward * 5);
+            // if (DefuseMinigameManager.lineStarted == false)
+                // UpdateLineColor(Color.yellow);
             if (hit.transform.gameObject.name == "Start Checkpoint") {
-                beamLine.startColor = Color.green;
+                intersectedObject = hit.transform.gameObject;
             } else {
-                beamLine.startColor = Color.blue;
+                // beamLine.startColor = Color.blue;
             }
         }
         else
@@ -51,7 +56,13 @@ public class DynamicBeam : MonoBehaviour
             beamLine.useWorldSpace = true;
             beamLine.SetPosition(0, transform.position);
             beamLine.SetPosition(1, transform.forward * 5);
+            UpdateLineColor(Color.blue);
         }
+    }
+
+    public static void UpdateLineColor(Color newColor) {
+        beamLine.startColor = newColor;
+        beamLine.endColor = newColor;
     }
 }
 
