@@ -290,7 +290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &768585823
 Transform:
   m_ObjectHideFlags: 0
@@ -312,12 +312,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768585822}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1da823422228d9249b370f716c67750a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 2800000, guid: 23f2e83c7cdc142ea9b1f5f9f015dac1, type: 3}
+  image: {fileID: 2800000, guid: bd3e09b1e63454ee09864466ce8f7fd7, type: 3}
   isStationary: 1
   autoUpdate: 1
   longerDimensionInSceneUnits: 1
@@ -334,6 +334,128 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   digiObject: {fileID: 919132149155446097, guid: 30f95ed2ba9a44e599bd0fcbd643d7a7, type: 3}
+--- !u!1 &812137226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 812137229}
+  - component: {fileID: 812137228}
+  - component: {fileID: 812137227}
+  m_Layer: 0
+  m_Name: CattermelonCardTrackedObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &812137227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812137226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0bbb8ec4351a4a2e8203e8b20a46024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  digiObject: {fileID: 919132149155446097, guid: 30f95ed2ba9a44e599bd0fcbd643d7a7, type: 3}
+--- !u!114 &812137228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812137226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da823422228d9249b370f716c67750a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 2800000, guid: 6152b22e41be24b36ba692a89ba5f088, type: 3}
+  isStationary: 1
+  autoUpdate: 1
+  longerDimensionInSceneUnits: 1
+--- !u!4 &812137229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812137226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1095376809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1095376812}
+  - component: {fileID: 1095376811}
+  - component: {fileID: 1095376810}
+  m_Layer: 0
+  m_Name: AttackCardTrackedObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1095376810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095376809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0bbb8ec4351a4a2e8203e8b20a46024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  digiObject: {fileID: 919132149155446097, guid: 30f95ed2ba9a44e599bd0fcbd643d7a7, type: 3}
+--- !u!114 &1095376811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095376809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da823422228d9249b370f716c67750a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 2800000, guid: 4f7556af652674044a88769c77ea6142, type: 3}
+  isStationary: 1
+  autoUpdate: 1
+  longerDimensionInSceneUnits: 1
+--- !u!4 &1095376812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095376809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1123304287
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +901,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb72622e58c684de78c53d1e895f4ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrackedImage: {fileID: 768585822}
+  DefuseCard: {fileID: 768585822}
+  AttackCard: {fileID: 1095376809}
+  CattermelonCard: {fileID: 812137226}
 --- !u!114 &1895885510
 MonoBehaviour:
   m_ObjectHideFlags: 0

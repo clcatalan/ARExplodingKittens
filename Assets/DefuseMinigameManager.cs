@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DefuseMinigameManager : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class DefuseMinigameManager : MonoBehaviour
             gameOver = true;
             playerWon = true;
          }
+
+         SceneManager.LoadScene("CardTrackerScene");
+
     }
 
     public static void resetGameStatuses() {

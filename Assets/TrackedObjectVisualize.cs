@@ -27,10 +27,18 @@ public class TrackedObjectVisualize : MonoBehaviour
 
     void OnTargetFound(MLImageTracker.Target target, MLImageTracker.Target.Result result) {
         _targetFound = true;
-        DefuseUIManager.statusText = "TARGET WAS FOUND";
-        // if (gameObject.name == "ExplodingCardTrackedObject") {
-        //     SceneManager.LoadScene("DefuseMinigame");
-        // }
+        // DefuseUIManager.statusText = gameObject.name;
+        if (gameObject.name == "ExplodingCardTrackedObject") {
+            SceneManager.LoadScene("DefuseMinigame");
+        }
+        if (gameObject.name == "AttackCardTrackedObject") {
+            DefuseUIManager.statusText = gameObject.name;
+            SceneManager.LoadScene("AttackScene");
+        }
+
+        if (gameObject.name == "CattermelonCardTrackedObject") {
+            SceneManager.LoadScene("TrueFalseScene");
+        }
         RefreshViewMode();
     }
 

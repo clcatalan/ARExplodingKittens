@@ -6,7 +6,9 @@ using UnityEngine.XR.MagicLeap;
 [RequireComponent(typeof(MLPrivilegeRequesterBehavior))]
 public class ImageTrackingManager : MonoBehaviour
 {
-    public GameObject TrackedImage;
+    public GameObject DefuseCard;
+    public GameObject AttackCard;
+    public GameObject CattermelonCard;
     private MLPrivilegeRequesterBehavior _privRequester = null;
 
 
@@ -29,6 +31,7 @@ public class ImageTrackingManager : MonoBehaviour
 
     void StartCapture()
     {
-        TrackedImage.SetActive(true);
+        DefuseCard.SetActive(true);
+        AttackCard.SetActive(true);
     }
 }
