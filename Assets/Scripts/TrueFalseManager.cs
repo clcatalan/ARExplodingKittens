@@ -25,7 +25,8 @@ public class TrueFalseManager : MonoBehaviour
         
     }
 
-    private void EndGame() {
+    public static void EndGame() {
+        resetGameStatuses();
         SceneManager.LoadScene("CardTrackerScene");
     }
 }
