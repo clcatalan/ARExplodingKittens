@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.MagicLeap;
 using MagicLeap.Core;
 
@@ -15,6 +16,7 @@ public class TrackedObjectVisualize : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DefuseUIManager.statusText = "Target image script loaded";
         _trackingBehaviour = GetComponent<MLImageTrackerBehavior>();
         _trackingBehaviour.OnTargetFound += OnTargetFound;
         _trackingBehaviour.OnTargetLost += OnTargetLost;
@@ -25,6 +27,10 @@ public class TrackedObjectVisualize : MonoBehaviour
 
     void OnTargetFound(MLImageTracker.Target target, MLImageTracker.Target.Result result) {
         _targetFound = true;
+        DefuseUIManager.statusText = "TARGET WAS FOUND";
+        // if (gameObject.name == "ExplodingCardTrackedObject") {
+        //     SceneManager.LoadScene("DefuseMinigame");
+        // }
         RefreshViewMode();
     }
 
