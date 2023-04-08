@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.XR.MagicLeap;
+using System.Linq;
 
 public class DrawLine : MonoBehaviour
  {
@@ -69,6 +70,7 @@ public class DrawLine : MonoBehaviour
         }
      }
 
+    string[] validAreas = {"rectangle", "rectangle (1)", "rectangle (2)", "Start Checkpoint", "End Checkpoint"};
     IEnumerator MakeLine() {
         GameObject existingLine = GameObject.Find("Canvas/Line(Clone)");
         if (existingLine != null) {
@@ -93,6 +95,16 @@ public class DrawLine : MonoBehaviour
                 line.positionCount++;
             } catch (MissingReferenceException) {
                 break;
+            }
+
+            if (!validAreas.Contains(DynamicBeam.intersectedObject.name)) {
+                DestroyExistingLine();
+                yield return null;
+            }
+
+            if (DynamicBeam.intersectedObject.name == "End Checkpoint") {
+                FinishLine();
+                yield return null;
             }
             line.SetPosition(line.positionCount - 1, controllerPos);
             string textS = $"{line.GetPosition(line.positionCount - 1).ToString()} {line.GetPosition(0).ToString()}";

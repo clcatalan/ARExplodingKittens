@@ -9,7 +9,7 @@ public class DefuseUIManager : MonoBehaviour
     [SerializeField] private TextMeshPro gameStatusText;
     [SerializeField] private TextMeshPro countdownText;
 
-    public static string statusText = "Test Text";
+    public static string statusText = "Looking for card...";
     // Start is called before the first frame update
     private void Update() {
         // if (DefuseMinigameManager.gameOver && DefuseMinigameManager.playerWon) {

@@ -38,21 +38,24 @@ public class DynamicBeam : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            DefuseUIManager.statusText = hit.transform.gameObject.name;
             intersectedObject = hit.transform.gameObject;
+            // DefuseUIManager.statusText = intersectedObject.name;
             beamLine.useWorldSpace = true;
             beamLine.SetPosition(0, transform.position);
-            beamLine.SetPosition(1, transform.forward * 5);
+            beamLine.SetPosition(1, hit.point);
             // if (DefuseMinigameManager.lineStarted == false)
                 // UpdateLineColor(Color.yellow);
-            if (hit.transform.gameObject.name == "Start Checkpoint") {
-                intersectedObject = hit.transform.gameObject;
-            } else {
-                // beamLine.startColor = Color.blue;
-            }
+            // if (hit.transform.gameObject.name == "Start Checkpoint") {
+            //     intersectedObject = hit.transform.gameObject;
+            // } else if (hit.transform.gameObject.name == "End Checkpoint") {
+            //     // beamLine.startColor = Color.blue;
+            //     intersectedObject = hit.transform.gameObject;
+            // }
         }
         else
         {
+            intersectedObject = this.transform.gameObject;
+            // DefuseUIManager.statusText = intersectedObject.name;
             beamLine.useWorldSpace = true;
             beamLine.SetPosition(0, transform.position);
             beamLine.SetPosition(1, transform.forward * 5);

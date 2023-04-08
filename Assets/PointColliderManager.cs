@@ -11,7 +11,10 @@ public class PointColliderManager : MonoBehaviour
     private void Update() {
         if (DynamicBeam.intersectedObject == endPoint && DefuseMinigameManager.lineStarted == true) {
             DefuseMinigameManager.endPointConnected = true;
-            DefuseMinigameManager.ChangeGameState();
+            DefuseMinigameManager.instance.ChangeGameState();
+        }
+        if (CountdownManager.timeRemaining <= 0 && DefuseMinigameManager.endPointConnected == false) {
+            DefuseMinigameManager.instance.ChangeGameState();
         }
     }
 
@@ -50,7 +53,7 @@ public class PointColliderManager : MonoBehaviour
         if (!DefuseMinigameManager.gameOver) {
             if (Input.GetMouseButton(0) && gameObject == endPoint) {
                 DefuseMinigameManager.endPointConnected = true;
-                DefuseMinigameManager.ChangeGameState();
+                DefuseMinigameManager.instance.ChangeGameState();
             }
         }
     }
