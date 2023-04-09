@@ -7,14 +7,12 @@ public class AttackSceneDynamicBeam : MonoBehaviour
 {
     public static MLInput.Controller controller;
     public static LineRenderer beamLine;
-    public GameObject kittenObject;
     public Color startColor;
     public Color endColor;
     // Start is called before the first frame update
 
     void Start()
     {
-        Debug.Log(kittenObject);
         controller = MLInput.GetController(MLInput.Hand.Left);
         beamLine = GetComponent<LineRenderer>();
 
@@ -31,7 +29,7 @@ public class AttackSceneDynamicBeam : MonoBehaviour
     }
 
 
-    // Update is called once per frame
+//     // Update is called once per frame
     void Update()
     {
         transform.position = controller.Position;
