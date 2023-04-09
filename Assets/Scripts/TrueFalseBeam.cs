@@ -51,7 +51,7 @@ public class TrueFalseBeam : MonoBehaviour
                     TrueFalseUIManager.CheckAnswer(false);
                 }
             } else {
-                beamLine.startColor = Color.grey;
+                beamLine.startColor = Color.yellow;
             }
         }
         else
