@@ -924,7 +924,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1117745702}
   m_maskType: 0
-  _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
 --- !u!23 &1117745702
@@ -1408,8 +1407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b4e040b8216f554c97cc19ab961b196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startColor: {r: 0, g: 0, b: 0, a: 0}
-  endColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!120 &2074112495
 LineRenderer:
   m_ObjectHideFlags: 0
