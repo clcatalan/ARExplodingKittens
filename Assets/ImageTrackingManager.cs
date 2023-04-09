@@ -33,5 +33,6 @@ public class ImageTrackingManager : MonoBehaviour
     {
         DefuseCard.SetActive(true);
         AttackCard.SetActive(true);
+        CattermelonCard.SetActive(true);
     }
 }
