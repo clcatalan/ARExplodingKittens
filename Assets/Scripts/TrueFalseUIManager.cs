@@ -21,9 +21,9 @@ public class TrueFalseUIManager : MonoBehaviour
 
     public static void CheckAnswer(bool answer) {
         if (answer == answers[index]) {
-            txtText.text = "Correct";
+            txt.text = "Correct";
         } else {
-            txtText.text = "Incorrect";
+            txt.text = "Incorrect";
         }
         TrueFalseManager.questionAnswered = true;
         TrueFalseManager.ChangeGameState();
