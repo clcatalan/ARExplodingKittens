@@ -42,6 +42,7 @@ public class TrueFalseBeam : MonoBehaviour
             beamLine.SetPosition(1, hit.point);
             if (hit.transform.gameObject.name == "True") {
                 beamLine.startColor = Color.blue;
+                // TrueFalseUIManager.txt = hit.transform.gameObject.name;
                 if (CheckTrigger()) {
                     TrueFalseUIManager.CheckAnswer(true);
                 }

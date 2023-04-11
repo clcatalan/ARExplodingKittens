@@ -37,6 +37,8 @@ public class TrueFalseManager : MonoBehaviour
         questionAsked = false;
         questionAnswered = false;
         playerCorrect = false;
+        TrueFalseUIManager.index = Random.Range(0, 4);
+        TrueFalseUIManager.txt = TrueFalseUIManager.questions[TrueFalseUIManager.index];
         SceneManager.LoadScene("CardTrackerScene");
     }
 }
