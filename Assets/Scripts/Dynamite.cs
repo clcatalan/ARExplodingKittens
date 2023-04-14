@@ -11,6 +11,7 @@ public class Dynamite : MonoBehaviour
     [SerializeField] private Material greenEyeMat;
     [SerializeField] private SkinnedMeshRenderer kittenSkin;
     [SerializeField] private GameObject kitten;
+    [SerializeField] private AudioSource beepSound;
     private Animator animController;
     private bool setKittenCD = true;
 
@@ -28,7 +29,7 @@ public class Dynamite : MonoBehaviour
         animController = GetComponentInChildren<Animator>();
         animController.SetBool("Defused", false);
         StartCoroutine(KittenCountDown());
-        txtEnable.enabled = false;
+        txtEnable.enabled = true;
     }
 
     // Update is called once per frame
@@ -42,6 +43,13 @@ public class Dynamite : MonoBehaviour
         {
             StopKittenCountDown();
         }
+
+        if (DefuseMinigameManager.gameOver) {
+            StopKittenCountDown();
+        }
+
+        if (!DefuseMinigameManager.gameOver)
+            txt.text = $"{Mathf.RoundToInt(CountdownManager.timeRemaining)}";
         //timeInterval += 1;
         //if (setKittenCD)
         //{
@@ -65,7 +73,7 @@ public class Dynamite : MonoBehaviour
     void StartKittenCountDown()
     {
         animController.SetBool("Defused", false);
-        txtEnable.enabled = false;
+        txtEnable.enabled = true;
         setKittenCD = true;
         StartCoroutine(KittenCountDown());
     }
@@ -75,7 +83,14 @@ public class Dynamite : MonoBehaviour
         //setKittenCD = false;
         //kittenSkin.material = greenEyeMat;
         StopAllCoroutines();
-        animController.SetBool("Defused", true);
+        if (DefuseMinigameManager.playerWon) {
+            animController.SetBool("Defused", true);
+            txt.text = "DEFUSED!";
+        } else {
+            txt.text = "EXPLODED!";
+            animController.SetBool("Defused", false);
+        }
+        txt.fontSize = 14;
         kittenSkin.material = greenEyeMat;
         txtEnable.enabled = true;
     }
@@ -93,6 +108,9 @@ public class Dynamite : MonoBehaviour
             {
                 kittenSkin.material = redEyeMat;
                 setKittenCD = true;
+            }
+            if (!DefuseMinigameManager.gameOver) {
+                beepSound.Play();
             }
             yield return new WaitForSeconds(1);
         }

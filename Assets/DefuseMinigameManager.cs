@@ -15,6 +15,9 @@ public class DefuseMinigameManager : MonoBehaviour
 
     public static DefuseMinigameManager instance;
 
+    [SerializeField] private AudioSource successSound;
+    [SerializeField] private AudioSource explosionSound;
+
     private void Awake() {
         instance = this;
     }
@@ -43,9 +46,10 @@ public class DefuseMinigameManager : MonoBehaviour
 
     IEnumerator ChangeGameStateCoroutine() {
         if (gameOver && playerWon) {
-            DefuseUIManager.statusText = "Kitten was defused! Great job!";
+            successSound.Play();
         } else if (gameOver && !playerWon) {
             DefuseUIManager.statusText = "Kitten exploded! Better luck next time...";
+            explosionSound.Play();
         }
         yield return new WaitForSeconds(3);
         resetGameStatuses();

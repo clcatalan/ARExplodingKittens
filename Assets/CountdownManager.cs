@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CountdownManager : MonoBehaviour
 {
-    private float startTime = 30f;
+    private float startTime = 20f;
     public static float timeRemaining {get; private set;}
 
     private void Start() {
@@ -19,6 +19,8 @@ public class CountdownManager : MonoBehaviour
         if (timeRemaining < 0) {
             timeRemaining = 0;
         }
+
+        // Debug.Log(timeRemaining);
      }
 
 }
