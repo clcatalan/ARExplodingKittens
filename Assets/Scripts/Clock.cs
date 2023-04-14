@@ -41,5 +41,6 @@ public class Clock : MonoBehaviour
         txtEnable.enabled = true;
         clock.SetActive(true);
         animController.SetBool("Time Up", true);
+        AudioManager.Instance.PlaySound("Magic");
     }
 }

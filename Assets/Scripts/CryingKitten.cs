@@ -20,7 +20,7 @@ public class CryingKitten : MonoBehaviour
     private void Start()
     {
         animController = GetComponent<Animator>();
-        kittenClickText.text = $"Cats Found: {kittenClickedSet.Count} / 3";
+        //kittenClickText.text = $"Cats Found: {kittenClickedSet.Count} / 3";
     }
 
     private void Update()
@@ -44,7 +44,8 @@ public class CryingKitten : MonoBehaviour
         bomb.SetActive(false);
         heart.SetActive(true);
         animController.SetBool("Saved", true);
-        kittenClickText.text = $"Cats Found: {kittenClickedSet.Count} / 3";
+        AudioManager.Instance.PlaySound("Heal");
+/*        kittenClickText.text = $"Cats Found: {kittenClickedSet.Count} / 3";*/
         if (kittenClickedSet.Count == 3) {
             StartCoroutine(ChangeGameStateCoroutine());
         }
