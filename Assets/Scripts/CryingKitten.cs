@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class CryingKitten : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class CryingKitten : MonoBehaviour
     private void Start()
     {
         animController = GetComponent<Animator>();
-        //kittenClickText.text = $"Cats Found: {kittenClickedSet.Count} / 3";
+        kittenClickText.text = $"Cats Found: {kittenClickedSet.Count} / 3";
     }
 
     private void Update()
@@ -44,8 +45,12 @@ public class CryingKitten : MonoBehaviour
         bomb.SetActive(false);
         heart.SetActive(true);
         animController.SetBool("Saved", true);
-        AudioManager.Instance.PlaySound("Heal");
-/*        kittenClickText.text = $"Cats Found: {kittenClickedSet.Count} / 3";*/
+        try {
+            AudioManager.Instance.PlaySound("Heal");
+        } catch (NullReferenceException e) {
+            Debug.Log("No Audio track selected");
+        }
+        kittenClickText.text = $"Cats Found: {kittenClickedSet.Count} / 3";
         if (kittenClickedSet.Count == 3) {
             StartCoroutine(ChangeGameStateCoroutine());
         }
@@ -61,6 +66,7 @@ public class CryingKitten : MonoBehaviour
     }
 
     IEnumerator ChangeGameStateCoroutine() {
+        Debug.Log("this was executed");
         if (kittenClickedSet.Count == 3) {
             yield return new WaitForSeconds(3);
             kittenClickedSet.Clear();
